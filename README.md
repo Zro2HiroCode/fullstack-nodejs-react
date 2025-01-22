@@ -24,28 +24,29 @@
 1. **โคลน Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/fullstack-nodejs-react.git
-   cd fullstack-nodejs-react
+   git clone https://github.com/Zro2HiroCode/fullstack-nodejs-react.git
    ```
-
+   
 2. **ตั้งค่าสภาพแวดล้อมเสมือน**:
+   
+   - cd fullstack-nodejs-react
 
    ```bash
    npm install
    ```
 
-3. **กำหนดค่าฐานข้อมูล**:
+4. **กำหนดค่าฐานข้อมูล**:
 
    - สร้างฐานข้อมูล MySQL และผู้ใช้
    - อัปเดตการกำหนดค่าฐานข้อมูลใน `config.js`
 
-4. **ทำงานแอปพลิเคชัน**:
+5. **ทำงานแอปพลิเคชัน**:
 
    ```bash
    npm start
    ```
 
-5. **เข้าถึงแอปพลิเคชัน**:
+6. **เข้าถึงแอปพลิเคชัน**:
 
    - แอปพลิเคชันจะพร้อมใช้งานที่ `http://localhost:3000`
 
