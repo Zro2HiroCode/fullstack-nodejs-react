@@ -2,6 +2,7 @@ import { useState,useEffect } from 'react';
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './styles.module.css';
 
 function App() {
   const [attractions, setAttraction] = useState([]);
@@ -14,6 +15,7 @@ function App() {
           setAttraction(result);
         },
       )
+      .catch(error => console.error('Error fetching data:', error)); // เพิ่มการจัดการข้อผิดพลาด
     }, [])
 
         return (
@@ -25,11 +27,13 @@ function App() {
                   <Card style={{ width: '100%' }}>
                     <Card.Img variant="top" src={attraction.coverimage} />
                     <Card.Body>
-                      <Card.Title>{attraction.name}</Card.Title>
-                      <Card.Text className='text-truncate'>
-                        {attraction.detail}
+                      <Card.Title className={styles.customTitle}>{attraction.name}</Card.Title>
+                      <Card.Text className={`${styles.customText} text-truncate`}>
+                        {attraction.detail} 
                       </Card.Text>
-                      <Button variant="primary">Read more</Button>
+                      <Button variant="primary" className={styles.customButton}>
+                        Read more
+                      </Button>
                     </Card.Body>
                   </Card>
                 </Col>

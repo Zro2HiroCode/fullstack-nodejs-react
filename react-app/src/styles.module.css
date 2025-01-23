@@ -1,0 +1,13 @@
+.customTitle {
+    font-size: 12px;
+    color: #ab6708;
+}
+
+.customText {
+    font-size: 10px;
+}
+
+.customButton {
+    font-size: 12px; /* ปรับขนาดตัวอักษร */
+    padding: 1px 5px; /* ปรับขนาดพื้นที่ภายในปุ่ม */
+  }
