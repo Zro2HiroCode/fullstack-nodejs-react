@@ -1,9 +1,9 @@
-var express = require('express');
-var cors = require('cors');
-var mysql = require('mysql');
+var express = require('express')
+var cors = require('cors')
+var mysql = require('mysql')
 
-var app = express();
-app.use(cors());
+var app = express()
+app.use(cors())
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -11,14 +11,16 @@ var connection = mysql.createConnection({
   password: '',
   database: 'mydb'
 });
-
-connection.connect(function(err) {
-  if (err) {
-    console.error('ข้อผิดพลาดในการเชื่อมต่อฐานข้อมูล:', err.stack);
-    return;
-  }
-  console.log('เชื่อมต่อฐานข้อมูลสำเร็จ ด้วย ID ' + connection.threadId);
-});
+// ทดสอบการเชื่อมต่อฐามข้อมูล โดยการเร๊ยกใช้งานฟังก์ชั่น connection.conmection(function(err)) เพื่อเชื่อมต่อฐานข้อมูล 
+// หากไม่สามารถเชื่อมต่อกับฐานข้อมูลได้จะแสดงข้อผิดพลาดใน console.error และหยุดการทำงาน หากเชื่อมต่อสำเร็จ
+// จะแสดงข้อความที่ระบุไว้ใน console.log 
+// connection.connect(function(err) {
+//   if (err) {
+//     console.error('ข้อผิดพลาดในการเชื่อมต่อฐานข้อมูล:', err.stack);
+//     return;
+//   }
+//   console.log('เชื่อมต่อฐานข้อมูลสำเร็จ ด้วย ID ' + connection.threadId);
+// });
 
 app.get('/recipes', function (req, res, next) {
   connection.query('SELECT * FROM recipes', function (error, results, fields) {
