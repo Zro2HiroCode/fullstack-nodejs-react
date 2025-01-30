@@ -1,5 +1,5 @@
 # Ignore node_modules directory
-#node_modules/
+node_modules/
 
 # Ignore log files
 *.log
@@ -13,3 +13,7 @@
 
 # Ignore temporary files
 *.tmp
+
+# Ignore Text file
+.txt
+
